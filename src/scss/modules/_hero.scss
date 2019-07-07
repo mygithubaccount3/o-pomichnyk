@@ -1,0 +1,185 @@
+@import "../utils/utilities/variables";
+@import "../utils/mixins/mixins";
+
+.hero {
+  &__title {
+    align-items: center;
+    background-color: #FAFBFB;
+    display: flex;
+    justify-content: flex-end;
+
+    @include respond-to(smallScreen) {
+      justify-content: center;
+    }
+
+    & > img {
+      width: 50%;
+      height: auto;
+
+      @include respond-to(smallScreen) {
+        display: none;
+      }
+    }
+  }
+
+  &__content {
+    margin: 188px auto auto;
+    width: 54%;
+
+    @include respond-to(smallScreen) {
+      margin-top: 30px;
+      width: 90%;
+    }
+
+    & > img {
+      float: left;
+      margin-right: 20px;
+      width: 60%;
+      height: auto;
+
+      @include respond-to(smallScreen) {
+        float: none;
+      }
+    }
+
+    & > h2 {
+      font-size: rem(36);
+      @include text("Helvetica Neue", 44px, #303A5F)
+    }
+
+    & > p {
+      font-size: rem(20);
+      @include text("Helvetica Neue", 33px, #373E58)
+    }
+
+    & > p:first-of-type {
+      font-size: rem(20);
+      @include text("Helvetica Neue", 31px, #373E58)
+    }
+  }
+
+  &__news {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    padding-top: 151px;
+
+    @include respond-to(smallScreen) {
+      padding-top: 30px;
+    }
+
+    &-item {
+      display: flex;
+      flex-direction: column;
+      width: 50%;
+
+      @include respond-to(smallScreen) {
+        width: 90%;
+      }
+
+      &:last-child {
+        margin-top: 105px;
+
+        @include respond-to(smallScreen) {
+          margin-top: 50px;
+        }
+      }
+
+      & > img {
+        width: 100%;
+        height: auto;
+        margin-bottom: 23px;
+      }
+    }
+
+    &-author {
+      font-size: rem(16);
+      margin-bottom: 23px;
+      @include text("Helvetica Neue", 20px, #41537D)
+    }
+
+    &-title {
+      font-size: rem(36);
+      margin-bottom: 13px;
+      @include text("Helvetica Neue", 44px, #303A5F)
+    }
+
+    &-text {
+      font-size: rem(20);
+      @include text("Helvetica Neue", 31px, #373E58)
+    }
+
+    &-date {
+      font-size: rem(16);
+      @include text("Helvetica Neue", 19px, #8390AE)
+    }
+  }
+
+  &__article {
+    margin: auto auto 3px;
+    padding-top: 225px;
+    width: 50%;
+
+    @include respond-to(smallScreen) {
+      padding-top: 30px;
+      width: 90%;
+    }
+
+    & > small {
+      &:first-of-type {
+        font-size: rem(16);
+        @include text("Helvetica Neue", 20px, #41537D)
+      }
+
+      &:nth-of-type(2) {
+        font-size: rem(23);
+        display: block;
+        @include text("Helvetica Neue", 31px, #373E58)
+      }
+    }
+
+
+    &-title {
+      font-size: rem(40);
+      margin-bottom: 3px;
+      @include text("Helvetica Neue", 50px, #384968)
+    }
+
+    &-description {
+      margin-bottom: 15px;
+    }
+
+    &-author {
+      align-items: flex-start;
+      display: flex;
+      flex-direction: column;
+      flex-wrap: wrap;
+      margin-bottom: 15px;
+      height: 54px;
+      width: 196px;
+
+      & > p {
+        font-size: rem(16);
+        margin-bottom: 10px;
+        @include text("Helvetica Neue", 19px, #4C5B7C)
+      }
+
+      & > small {
+        font-size: rem(16);
+        @include text("Helvetica Neue", 19px, #8390AE)
+      }
+    }
+
+    &-text {
+      font-size: rem(20);
+      margin-bottom: 30px;
+      @include text("Helvetica Neue", 31px, #373E58)
+    }
+
+    & > img {
+      margin-bottom: 30px;
+      width: 84%;
+      height: auto;
+    }
+  }
+}

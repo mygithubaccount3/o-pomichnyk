@@ -1,0 +1,106 @@
+@import "../utils/utilities/variables";
+@import "../utils/mixins/mixins";
+
+.header {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+
+  & .navbar {
+    background-color: #FCFDFF;
+    padding-top: 12px;
+    padding-right: 88px;
+    padding-bottom: 12px;
+    width: 100%;
+
+    @include respond-to(smallScreen) {
+      padding-right: 16px;
+    }
+
+    &-collapse {
+      justify-content: flex-end;
+
+      & .navbar-nav {
+        @include respond-to(smallScreen) {
+          margin: auto;
+          text-align: center;
+          width: 115px;
+        }
+      }
+    }
+
+    & .nav-item {
+      &:last-child {
+        border: 1px solid #5E66FF;
+        box-sizing: border-box;
+        border-radius: 0 8px 0 0;
+      }
+
+      & .nav-search {
+        background: none;
+        border: none;
+        height: 39px;
+
+        &::after {
+          content: '\f002';
+          font-family: FontAwesome;
+        }
+      }
+    }
+
+    & .nav-link {
+      font-size: rem(17);
+      line-height: 21px;
+      color: #41537D;
+    }
+  }
+
+  & > .justify-content-center {
+    align-items: center;
+    display: inline-flex;
+
+    & .nav-item {
+      &:first-child {
+        width: 38px;
+        height: 45px;
+      }
+
+      & .nav-menu {
+        background-color: transparent;
+        background-image: url("/o-pomichnyk/dist/assets/img/logo.svg");
+        border: none;
+        width: 38px;
+        height: 45px;
+      }
+    }
+
+    & .nav-link {
+      font-size: rem(16);
+      @include text("Helvetica Neue", 20px, #41537D)
+    }
+  }
+
+  &__social {
+    display: inline-flex;
+    padding-left: 0;
+    list-style-type: none;
+    justify-content: space-between;
+    width: 40px;
+    align-items: center;
+    margin-bottom: 0;
+  }
+
+  &__item {
+    display: inline-block;
+  }
+
+  &__link {
+    &--telegram::after {
+      @include icon("\f2c6")
+    }
+
+    &--facebook::after {
+      @include icon("\f09a")
+    }
+  }
+}
